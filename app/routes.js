@@ -2,7 +2,7 @@ var express  = require('express');
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const MongoClient = require('mongodb').MongoClient
-  const connectionString = 'mongodb+srv://christinabrgs:Breakingwith@cluster0.qia0kni.mongodb.net/?retryWrites=true&w=majority'
+const connectionString = 'mongodb+srv://christinabrgs:Breakingwith@cluster0.qia0kni.mongodb.net/?retryWrites=true&w=majority'
 
 module.exports = function (app, passport, db) {
 
@@ -40,7 +40,7 @@ module.exports = function (app, passport, db) {
         const pictures = await ImgCollection.find().toArray()
         console.log('this is', pictures)
         
-          res.render('profile.ejs', {arr: pictures})
+          res.render('profile.ejs', {pictures: pictures})
 
       });
 
