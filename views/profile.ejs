@@ -23,19 +23,10 @@
 
       <!-- LOCAL INFORMATION -->
       <div class="col-sm-6">
-        <div class="well">
-          <h3><span class="fa fa-user"></span> Local</h3>
-
-        </div>
-      </div>
-      <div class="col-sm-6">
-        <h3>Messages</h3>
-
-
 
         <form action="/uploads" enctype="multipart/form-data" method="POST">
           <div>
-            <label>Upload profile picture</label>
+            <label>Upload a picture to the gallery</label>
             <input type="file" name="profile-file">
           </div>
 
@@ -47,13 +38,14 @@
     </div>
 
     <br><br>
-    <div class="col-span-1">
-      
-      <h1 class="text-center">Gallery</h1>
+    <div class="gallery-container">
+      <h1>GALLERY</h1>
+
       <% for (let i = 0; i < pictures.length; i++) { %>
-        <img src="<%= pictures[i].path %>">
-      <% } %> 
-      
+        <div class="gallery-item">
+          <img src="<%= pictures[i].path %>">
+        </div>
+      <% } %>
     </div>
 
   </div>
